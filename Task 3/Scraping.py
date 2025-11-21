@@ -10,9 +10,7 @@ def scrape_indiamart(product):
     soup = BeautifulSoup(r.text, "html.parser")
 
    
-    product_cards = soup.select(
-        "div.card"
-    )
+    product_cards = soup.select( "div.card" )
 
     data = []
 
@@ -35,9 +33,9 @@ def scrape_indiamart(product):
         price = price_tag.get_text(strip=True) if price_tag else "N/A"
 
         seller_tag = (
-            card.select_one(".c_name") or
-            card.select_one(".cmpny") or
-            card.select_one(".seller-name") or
+            card.select_one(".company-location") or
+            card.select_one(".companyname") or
+            card.select_one("h4.company-location") or
             card.select_one(".store-name")
         )
         seller = seller_tag.get_text(strip=True) if seller_tag else "N/A"
