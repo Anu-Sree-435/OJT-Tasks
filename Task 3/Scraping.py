@@ -19,7 +19,7 @@ def scrape_indiamart(product):
     for card in product_cards:
 
         product_name_tag = (
-            card.select_one("fs_18") or
+            card.select_one(".fs_18") or
             card.select_one("h2") or
             card.select_one(".product-title") or
             card.select_one("a")
