@@ -10,9 +10,7 @@ def scrape_indiamart(product):
     soup = BeautifulSoup(r.text, "html.parser")
 
    
-    product_cards = soup.select(
-        "div.card"
-    )
+    product_cards = soup.select( "div.card" )
 
     data = []
 
