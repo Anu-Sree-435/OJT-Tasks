@@ -69,11 +69,9 @@ def scrape_flipkart(product):
          card.find("a", {"class": "wjcEIp"})
         product_name = name_tag.get_text(strip=True) if name_tag else "N/A"
 
-        # Price
         price_tag = card.find("div", {"class": "Nx9bqj"})
         price = price_tag.get_text(strip=True) if price_tag else "N/A"
-
-        # Link
+        
         link_tag = card.find("a", href=True)
         link = "https://www.flipkart.com" + link_tag["href"] if link_tag else "N/A"
 
