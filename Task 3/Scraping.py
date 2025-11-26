@@ -89,6 +89,5 @@ scrape_indiamart(product)
 scrape_flipkart(product)
 
 df= pd.DataFrame(data)
-# filename = 
 df.to_csv(f"{product.replace(' ', '_')}.csv", index=False)
 print("\nSaved as csv")
