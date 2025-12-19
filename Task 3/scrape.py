@@ -41,7 +41,7 @@ def scrape_indiamart(product): #India_Mart
         seller = seller_tag.get_text(strip=True) if seller_tag else "N/A"
 
         link_tag = card.select_one("a") or card.find("a", href=True)
-        url = "https://dir.indiamart.com" + link_tag.get("href") if link_tag else "N/A"
+        url = "https://dir.indiamart.com" + link_tag["href"] if link_tag else "N/A"
 
         data.append({
             "Platform": "IndiaMart",
@@ -62,11 +62,11 @@ def scrape_flipkart(product): #Flipkart
     r = requests.get(url, headers=headers)
     soup = BeautifulSoup(r.text, "html.parser")
    
-    product_cards = soup.find_all("div", {"class": "_75nlfW"})
+    product_cards = soup.find_all("div", {"class": "lvJbLV"}) or soup.find_all("div", {"class": "LwDgZ8"}) or soup.find_all("div", {"class": "nZIRY7"}) 
 
     for card in product_cards:
-        name_tag = card.find("div", {"class": "KzDlHZ"}) or \
-         card.find("a", {"class": "wjcEIp"})
+        name_tag = card.find("a", {"class": "pIpigb"}) or \
+         card.find("div", {"class": "RG5Slk"})
         product_name = name_tag.get_text(strip=True) if name_tag else "N/A"
     
         price_tag = card.find("div", {"class": "Nx9bqj"})
