@@ -11,7 +11,6 @@ def get_trending_products(products):
 
     output = {
         "generated_on": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "criteria": "sorted by Review_Count and Rating",
         "trending_products": trending
     }
 
