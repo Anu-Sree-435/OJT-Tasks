@@ -2,12 +2,15 @@ import tkinter as tk
 import os
 
 def donor():
+    root.iconify()
     os.system("python donor_module.py")
 
 def request():
+    root.iconify()
     os.system("python request_module.py")
 
 def hospital():
+    root.iconify()
     os.system("python hospital_module.py")
 
 root = tk.Tk()

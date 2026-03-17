@@ -12,6 +12,7 @@ def create_request():
     conn.close()
 
     print("Request Created")
+    root.destroy()
 
 root = tk.Tk()
 root.title("Blood Request")
@@ -21,18 +22,18 @@ blood = tk.StringVar()
 location = tk.StringVar()
 urgency = tk.StringVar()
 
-tk.Label(root,text="Patient Name").pack()
-tk.Entry(root,textvariable=patient).pack()
+tk.Label(root,text="Patient Name").grid(row=0, column=0, padx=10, pady=5)
+tk.Entry(root,textvariable=patient).grid(row=0, column=1)
 
-tk.Label(root,text="Blood Group").pack()
-tk.Entry(root,textvariable=blood).pack()
+tk.Label(root,text="Blood Group").grid(row=1, column=0, padx=10, pady=5)
+tk.Entry(root,textvariable=blood).grid(row=1, column=1)
 
-tk.Label(root,text="Location").pack()
-tk.Entry(root,textvariable=location).pack()
+tk.Label(root,text="Location").grid(row=2, column=0, padx=10, pady=5)
+tk.Entry(root,textvariable=location).grid(row=2, column=1)
 
-tk.Label(root,text="Urgency").pack()
-tk.Entry(root,textvariable=urgency).pack()
+tk.Label(root,text="Urgency").grid(row=3, column=0, padx=10, pady=5)
+tk.Entry(root,textvariable=urgency).grid(row=3, column=1)
 
-tk.Button(root,text="Submit Request",command=create_request).pack()
+tk.Button(root,text="Submit Request",command=create_request).grid(row=4, column=1, padx=10)
 
 root.mainloop()

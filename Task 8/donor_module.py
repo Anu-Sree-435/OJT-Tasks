@@ -13,6 +13,7 @@ def add_donor():
     conn.close()
 
     print("Donor Added")
+    root.destroy()
 
 root = tk.Tk()
 root.title("Donor Registration")
@@ -25,27 +26,26 @@ age = tk.StringVar()
 health = tk.StringVar()
 last = tk.StringVar()
 
-tk.Label(root,text="Name").pack()
-tk.Entry(root,textvariable=name).pack()
+tk.Label(root,text="Name").grid(row=0, column=0, padx=10, pady=5)
+tk.Entry(root,textvariable=name).grid(row=0, column=1)
 
-tk.Label(root,text="Phone").pack()
-tk.Entry(root,textvariable=phone).pack()
+tk.Label(root,text="Phone").grid(row=1, column=0, padx=10, pady=5)
+tk.Entry(root,textvariable=phone).grid(row=1, column=1)
 
-tk.Label(root,text="Address").pack()
-tk.Entry(root,textvariable=address).pack()
+tk.Label(root,text="Address").grid(row=2, column=0, padx=10, pady=5)
+tk.Entry(root,textvariable=address).grid(row=2, column=1)
 
-tk.Label(root,text="Blood Group").pack()
-tk.Entry(root,textvariable=blood).pack()
+tk.Label(root,text="Blood Group").grid(row=3, column=0, padx=10, pady=5)
+tk.Entry(root,textvariable=blood).grid(row=3, column=1)
 
-tk.Label(root,text="Age").pack()
-tk.Entry(root,textvariable=age).pack()
+tk.Label(root,text="Age").grid(row=4, column=0, padx=10, pady=5)
+tk.Entry(root,textvariable=age).grid(row=4, column=1)
 
-tk.Label(root,text="Health Details").pack()
-tk.Entry(root,textvariable=health).pack()
+tk.Label(root,text="Health Details").grid(row=5, column=0, padx=10, pady=5)
+tk.Entry(root,textvariable=health).grid(row=5, column=1)
 
-tk.Label(root,text="Last Donation Date").pack()
-tk.Entry(root,textvariable=last).pack()
+tk.Label(root,text="Last Donation Date").grid(row=6, column=0, padx=10, pady=5)
+tk.Entry(root,textvariable=last).grid(row=6, column=1)
 
-tk.Button(root,text="Register",command=add_donor).pack()
-
+tk.Button(root,text="Register",command=add_donor).grid(row=7, column=1, padx=10)
 root.mainloop()
