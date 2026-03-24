@@ -14,20 +14,24 @@ def login_ui(root):
         result = cursor.fetchone()
 
         if result:
-            tk.Label(win, text="Login Success").pack()
+            status.config(text="Login Success", fg="green")
         else:
-            tk.Label(win, text="Invalid Login").pack()
-            root.iconify()
+            status.config(text="Invalid Login", fg="red")
 
     win = tk.Toplevel(root)
     win.title("Login")
 
-    tk.Label(win, text="Username").pack()
+    win.geometry("300x200")
+
+    tk.Label(win, text="Username").grid(row=0, column=0, padx=10, pady=10)
     username = tk.Entry(win)
-    username.pack()
+    username.grid(row=0, column=1, padx=10, pady=10)
 
-    tk.Label(win, text="Password").pack()
+    tk.Label(win, text="Password").grid(row=1, column=0, padx=10, pady=10)
     password = tk.Entry(win, show="*")
-    password.pack()
+    password.grid(row=1, column=1, padx=10, pady=10)
 
-    tk.Button(win, text="Login", command=login).pack()
+    tk.Button(win, text="Login", command=login).grid(row=2, column=0, columnspan=2, pady=10)
+
+    status = tk.Label(win, text="")
+    status.grid(row=3, column=0, columnspan=2)
