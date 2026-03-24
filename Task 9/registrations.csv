@@ -1,0 +1,17 @@
+id,name,event_id,checked_in
+1,Anu,1,1
+2,Ravi,0,1
+3,Priya,1,0
+4,Karthick,1,1
+5,Meena,2,1
+6,Arjun,2,0
+7,Divya,3,0
+8,Sanjay,3,0
+9,Aishu,3,0
+10,Rahul,3,0
+11,Sneha,4,0
+12,Vicky,4,0
+13,Pooja,4,0
+14,Ajay,5,0
+15,Neha,5,0
+16,Surya,4,0
